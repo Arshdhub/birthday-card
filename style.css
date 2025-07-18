@@ -1,0 +1,149 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #d5b8db, #e0c3fc);
+  overflow-x: hidden;
+}
+
+.card {
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  margin: 80px auto;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.3);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  color: #3e206d;
+  position: relative;
+  z-index: 2;
+}
+
+.card h1 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.main-img {
+  width: 100%;
+  max-height: 550px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  transition: transform 0.5s ease-in-out;
+}
+
+.main-img:hover {
+  transform: scale(1.05);
+}
+
+.message {
+  margin-top: 10px;
+  margin: 20px 0;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.magic-btn {
+  padding: 10px 20px;
+  background: #a855f7;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #a855f7;
+}
+
+.magic-btn:hover {
+  transform: scale(1.1);
+  background: #9333ea;
+}
+
+.secret {
+  margin-top: 30px;
+  animation: fadeIn 1s ease forwards;
+}
+
+.secret-img {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.secret-msg {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #7e22ce;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Fairy Bubbles Animation */
+.bubble-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background: transparent;
+}
+
+.bubble-wrap::before,
+.bubble-wrap::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  animation: float 10s infinite ease-in-out;
+}
+
+.bubble-wrap::before {
+  width: 60px;
+  height: 60px;
+  left: 20%;
+  bottom: -80px;
+}
+
+.bubble-wrap::after {
+  width: 40px;
+  height: 40px;
+  right: 30%;
+  bottom: -50px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-800px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    margin: 40px 10px;
+  }
+}
